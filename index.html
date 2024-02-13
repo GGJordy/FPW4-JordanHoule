@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Theme Movie Database</title>
+    <link rel="stylesheet" href="./stylesSW.css">
+    <script src="https://kit.fontawesome.com/cc09b34362.js" crossorigin="anonymous"></script>
+    <script src="index.js" async></script>
+    <link rel="icon" type="image/x-icon" href="./SWassets/darthvader.svg">
+</head>
+ 
+<body>
+    <video autoplay loop id="galaxyVideo"><source src="./SWassets/galaxyVideo.mp4" type="video/mp4"></video>
+    <!-- <audio id="myAudio" src="./SWassets/swTheme.mp3" autoplay></audio> -->
+<section id="landing">
+    <nav>
+        <div class="nav__container">
+            <div class="nav__logo-wrapper">
+                <img src="./SWassets/lightsaber.svg" class="nav__logo" alt="">
+                <div class="nav__text-wrapper">
+                <h1 class="nav__logo--text">the jedi collective</h1>
+            <h6>^ FOR YOUR EYES ONLY 👀 ^</h6>
+        </div>
+            </div>
+            <div class="nav__link--wrapper">
+                <ul class="nav__link--list">
+                    <li><a href="#" class="nav__link--anchor">Home</a></li>
+                    <li><a href="#" class="nav__link--anchor">About</a></li>
+                    <li><a href="#search" class="search__anchor">Search The Collective</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+<section id="main">
+    <div class="main__container">
+        <div class="row">
+            <div class="main__darth">
+                <figure class="darth__wrapper">
+                    <img src="./SWassets/vaderShadow.svg" class="darth__img" alt="darth vader picture">
+                </figure>
+                <h1 class="heading"><span class="pink">with the defeat of the empire, many movies were lost in the war.</span></span></h2>
+                    <h1><span class="blue">this is the collection of all that is left in the galaxy.</span></h1>
+                <h2 class="sub-heading">MAY THE FORCE BE WITH YOU.</h2>
+                <div class="input__container">
+                    <input id="search" type="search" placeholder="Search the archives for any movie..." onchange="onSearchChange(event)">
+                    <button><i class="fa-solid fa-magnifying-glass" onclick="getMovies(name)"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="collective">
+    <div class="collective__container">
+        <div class="row">
+            <div class="movie__cards--container movies__loading">
+                
+             <img src="./SWassets/lightsaber.svg" class="loading__saber" alt="">
+             <h1 class="loading__text">loading...</h1>
+        </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <figure>
+        <img src="./SWassets/GGJordylogo--white.svg" class="footer__logo" alt="">
+    </figure>
+    <div class="social__links">
+        <a href="https://www.linkedin.com/in/jordan-houle-9b760182/" class="social__link"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/GGJordy" class="social__link"><i class="fa-brands fa-square-github"></i></a>
+        <a href="#" class="social__link"><i class="fa-solid fa-file"></i></a>
+    </div>
+
+    <div class="footer__links">
+        <li><a href="#" class="nav__link--anchor">Home</a></li>
+        <li><a href="#" class="nav__link--anchor">About</a></li>
+        <li><a href="#search" class="nav__link--anchor search__anchor">Search The Collective<a href=""></i></a></a></i></li>
+    </div>
+    <h2>&copy Copyright Jordan Houle 2024</h2>
+</footer>
+</body>
+</html>
+
