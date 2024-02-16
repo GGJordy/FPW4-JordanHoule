@@ -107,6 +107,7 @@ button:hover {
 
 /* NAV */
 
+
 nav {
     display: flex;
     justify-content: center;
@@ -196,6 +197,7 @@ nav {
 
 /* MAIN */
 
+
 .main__container {
     display: flex;
     justify-content: center;
@@ -267,7 +269,9 @@ input:focus {
     padding-left: 24px;
 }
 
+
 /* COLLECTIVE (SEARCH RESULTS)*/
+
 
 #collective {
     background-color: rgb(0, 0, 0, 0.8);
@@ -336,25 +340,28 @@ input:focus {
 
 /* LOADING */
 
+
+.loading__row {
+    display: flex;
+    flex-direction: column;
+}
+
 .movies__loading {
     display: flex;
     flex-direction: column;
     align-items: center;
+    display: none;
 }
 
 .loading__saber {
     height: 80px;
     width: 80px;
     animation: rotate 600ms infinite linear;
-    display: none !important;
 }
 
-.movies__loading .loading__saber {
-    display: block !important;
-}
-
-.movies__loading .loading__text {
-    display: block !important;
+.loading__text {
+    font-size: 24px;
+    animation: blinker 2s linear infinite;
 }
 
 
@@ -367,14 +374,6 @@ input:focus {
     }
 }
 
-
-
-.loading__text {
-    font-size: 24px;
-    animation: blinker 2s linear infinite;
-    display: none !important;
-}
-
 @keyframes blinker {
     50% {
         opacity: 0;
@@ -383,6 +382,7 @@ input:focus {
 
 
 /* FOOTER */
+
 
 footer {
     background-color: rgb(0, 0, 0, 0.98);
@@ -403,7 +403,6 @@ footer {
     padding: 24px;
 }
 
-
 .social__links {
     display: flex;
     
@@ -417,4 +416,153 @@ footer {
 
 .social__link:hover {
     color: #0280D5;
+}
+
+
+/* ABOUT */
+
+.about__container {
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.about__volume--text {
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 16px;
+    margin-left: 16px;
+    animation: blinker 2s infinite;
+}
+
+.heading__about {
+    color: yellow;
+    width: 70%;
+    animation: upwards 20s linear infinite;
+    line-height: 1.5;
+    font-size: 48px;
+}
+
+.about__anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 80px;
+    text-decoration: underline;
+}
+
+@keyframes upwards {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+
+/* RESPONSIVENESS */
+
+/* SMALL PHONES, TABLETS, LARGE SMART PHONES */
+
+@media (max-width: 768px) {
+.nav__logo--text {
+    font-size: 40px;
+}
+
+.nav__logo {
+    height: 48px;
+    width: 48px;
+    margin-left: 14px;
+}
+
+.darth__img {
+    height: 400px;
+    width: 400px;
+}
+
+.nav__link--anchor {
+    font-size: 14px;
+}
+
+.search__anchor {
+    font-size: 14px;
+    margin-right: 14px;
+}
+
+.heading {
+    font-size: 24px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h6 {
+    font-size: 8px;
+}
+
+.main__darth {
+    max-width: 500px;
+}
+
+}
+
+@media (max-width: 711px) {
+
+    .nav__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav__link--wrapper {
+        margin-top: 18px;
+    }
+
+    .nav__logo-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 80px;
+    }
+   
+    .main__container {
+        padding-top: 24px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .movie__card {
+        width: 90%;
+    }
+
+    .nav__logo--text {
+        padding: 0;
+        filter: none;
+    }
+
+    .nav__logo {
+        margin: 0;
+    }
+
+    .input__container {
+        width: 80%;
+    }
+
+    h1 {
+        padding: 0 14px;
+    }
+  
+    .nav__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

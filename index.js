@@ -1,20 +1,20 @@
-// https://www.omdbapi.com/?i=tt3896198&apikey=8545f7f7&s=star_wars
 
 const moviesListEl = document.querySelector('.movie__cards--container')
 const moviesWrapper = document.querySelector('.movies__loading')
 
+
+
 // GET MOVIES FROM API
 
 async function getMovies(name) {
-   moviesListEl.classList += ' movies__loading'
+    moviesListEl.innerhtml = "";
     const movies = await fetch(`https://www.omdbapi.com/?apikey=8545f7f7&s=${name}`)
-    moviesListEl.classList.remove('movies__loading')
     const moviesData = await movies.json();
     moviesListEl.innerHTML = moviesData.Search.map((movie) => moviesHTML(movie)).join("");
 }
 
 
-// CLEAN UP THE CODE -- MAKE IT SEXY
+// CLEAN UP THE CODE -- MAKE IT SEXY (dynamic)
 
 function moviesHTML(movie) {
     return `<div class="movie__card">
@@ -30,22 +30,21 @@ function moviesHTML(movie) {
 }
 
 
-
 // SEARCH BAR FUNCTIONALITY
 
 async function onSearchChange(name) {
    const movieName = name.target.value;
-
-   setTimeout(() => {getMovies(movieName);}, 1000);
-    
+   showLoading(true);
+   setTimeout(() => {getMovies(movieName);}, 1000)
+   
+   
 }
 
-// AUDIO EASTER EGG
 
-// const loudAsHell = document.getElementById("myAudio");
+// LOADING SCREEN 
 
-// function setVolume() {
-//     loudAsHell.volume = 0.1;
-// }
+function showLoading(isLoading) {
+    moviesWrapper.style.display = "block"
+}
 
-// setVolume();
+
